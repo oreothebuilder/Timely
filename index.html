@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIMELY - University Timetable & Attendance System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .form-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        input[type="radio"]:checked + div .w-4 {
+            border-color: #2563eb;
+        }
+        input[type="radio"]:checked + div .w-2 {
+            opacity: 1;
+        }
+        input[type="radio"]:checked + div {
+            background-color: #eff6ff;
+            border-color: #2563eb;
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen flex items-center justify-center p-4">
+    
+    <div class="form-card w-full max-w-md rounded-2xl shadow-2xl p-8">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                </svg>
+                </div>
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">TIMELY</h1>
+            <p class="text-gray-600">University Timetable & Attendance System</p>
+                </div>
+
+        <!-- Tabs -->
+        <div class="flex bg-gray-100 rounded-lg p-1 mb-6">
+            <button id="signin-tab" class="flex-1 py-2 px-4 rounded-md text-sm font-medium transition-all duration-200 bg-white text-gray-800 shadow-sm">
+                Sign In
+            </button>
+            <button id="signup-tab" class="flex-1 py-2 px-4 rounded-md text-sm font-medium transition-all duration-200 text-gray-600 hover:text-gray-800">
+                Sign Up
+                </button>
+            </div>
+
+        <!-- Sign In Form -->
+        <form id="signin-form" class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                <input type="email" id="signin-email" value="helpwatify@gmail.com" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                <input type="password" id="signin-password" value="••••••••" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Login As</label>
+                <div class="grid grid-cols-2 gap-3">
+                    <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition duration-200">
+                        <input type="radio" name="signin-role" value="student" class="sr-only" checked>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-4 h-4 border-2 border-gray-300 rounded-full flex items-center justify-center">
+                                <div class="w-2 h-2 bg-blue-600 rounded-full opacity-0 transition duration-200"></div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
+                                </svg>
+                                <span class="text-sm font-medium text-gray-700">Student</span>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition duration-200">
+                        <input type="radio" name="signin-role" value="faculty" class="sr-only">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-4 h-4 border-2 border-gray-300 rounded-full flex items-center justify-center">
+                                <div class="w-2 h-2 bg-blue-600 rounded-full opacity-0 transition duration-200"></div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                                </svg>
+                                <span class="text-sm font-medium text-gray-700">Faculty</span>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-lg">
+                Sign In
+            </button>
+        </form>
+
+        <!-- Sign Up Form -->
+        <form id="signup-form" class="space-y-4 hidden">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                <input type="text" id="signup-name" placeholder="Enter your full name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                <input type="email" id="signup-email" placeholder="Enter your university email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                <input type="password" id="signup-password" placeholder="Create a strong password" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Role</label>
+                <div class="grid grid-cols-2 gap-3">
+                    <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition duration-200">
+                        <input type="radio" name="role" value="student" class="sr-only" checked>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-4 h-4 border-2 border-gray-300 rounded-full flex items-center justify-center">
+                                <div class="w-2 h-2 bg-blue-600 rounded-full opacity-0 transition duration-200"></div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
+                                </svg>
+                                <span class="text-sm font-medium text-gray-700">Student</span>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition duration-200">
+                        <input type="radio" name="role" value="faculty" class="sr-only">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-4 h-4 border-2 border-gray-300 rounded-full flex items-center justify-center">
+                                <div class="w-2 h-2 bg-blue-600 rounded-full opacity-0 transition duration-200"></div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                                </svg>
+                                <span class="text-sm font-medium text-gray-700">Faculty</span>
+                </div>
+            </div>
+                    </label>
+        </div>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Branch</label>
+                <input type="text" id="signup-branch" placeholder="e.g., Computer Science, Electronics" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200">
+            </div>
+            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-lg">
+                Create Account
+            </button>
+        </form>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        const signinTab = document.getElementById('signin-tab');
+        const signupTab = document.getElementById('signup-tab');
+        const signinForm = document.getElementById('signin-form');
+        const signupForm = document.getElementById('signup-form');
+
+        signinTab.addEventListener('click', () => {
+            signinTab.classList.add('bg-white', 'text-gray-800', 'shadow-sm');
+            signinTab.classList.remove('text-gray-600');
+            signupTab.classList.remove('bg-white', 'text-gray-800', 'shadow-sm');
+            signupTab.classList.add('text-gray-600');
+            signinForm.classList.remove('hidden');
+            signupForm.classList.add('hidden');
+        });
+
+        signupTab.addEventListener('click', () => {
+            signupTab.classList.add('bg-white', 'text-gray-800', 'shadow-sm');
+            signupTab.classList.remove('text-gray-600');
+            signinTab.classList.remove('bg-white', 'text-gray-800', 'shadow-sm');
+            signinTab.classList.add('text-gray-600');
+            signupForm.classList.remove('hidden');
+            signinForm.classList.add('hidden');
+        });
+
+        // Form submissions
+        signinForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('signin-email').value;
+            const password = document.getElementById('signin-password').value;
+            const role = document.querySelector('input[name="signin-role"]:checked').value;
+            
+            // Simple validation and routing
+            if (email && password) {
+                // For demo purposes, redirect to admin if email contains 'admin' or 'helpwatify'
+                if (email.includes('admin') || email.includes('helpwatify')) {
+                    window.location.href = 'admin/index.html';
+                    } else {
+                    // Route based on selected role
+                    if (role === 'student') {
+                        window.location.href = 'student/index.html';
+                    } else if (role === 'faculty') {
+                        window.location.href = 'faculty/index.html';
+                    }
+                }
+            }
+        });
+
+        signupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('signup-name').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+            const role = document.querySelector('input[name="role"]:checked').value;
+            const branch = document.getElementById('signup-branch').value;
+            
+            if (name && email && password && branch) {
+                alert(`Account created successfully for ${name} (${role.charAt(0).toUpperCase() + role.slice(1)})!`);
+                // Switch to sign in form
+                signinTab.click();
+            }
+        });
+    </script>
+</body>
+</html>
